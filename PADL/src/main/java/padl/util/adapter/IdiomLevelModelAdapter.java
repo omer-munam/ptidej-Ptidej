@@ -81,6 +81,7 @@ public class IdiomLevelModelAdapter implements IIdiomLevelModel {
 		return this.wrappedCodeLevelModel.doesContainTopLevelEntityWithID(anID);
 	}
 
+	@SuppressWarnings("deprecation")
 	public void fireModelChange(final String anEventType, final IEvent anEvent) {
 		this.wrappedCodeLevelModel.fireModelChange(anEventType, anEvent);
 	}

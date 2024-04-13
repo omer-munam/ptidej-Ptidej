@@ -56,7 +56,7 @@ public class VisitorsRepository implements IRepository {
 			for (int i = 0; i < classFilesGenerators.length; i++) {
 				try {
 					listOfGenerators.add((IGenerator) Class.forName(
-						classFilesGenerators[i].getName()).newInstance());
+						classFilesGenerators[i].getName()).getDeclaredConstructor().newInstance());
 				}
 				// Yann 2003/10/07: Protection!
 				// I want to make sure that any problem in this
@@ -101,7 +101,7 @@ public class VisitorsRepository implements IRepository {
 			for (int i = 0; i < classFilesWalkers.length; i++) {
 				try {
 					listOfWalkers.add((IWalker) Class.forName(
-						classFilesWalkers[i].getName()).newInstance());
+						classFilesWalkers[i].getName()).getDeclaredConstructor().newInstance());
 				}
 				// Yann 2003/10/07: Protection!
 				// I want to make sure that any problem in this
