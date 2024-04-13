@@ -59,6 +59,7 @@ public final class GeneratePlantUMLWindow extends AbstractExternalWindow {
             }
             myWriter.write(walker.getResult().toString());
             myWriter.close();
+            this.dispose();
         } catch (IOException e) {
             e.printStackTrace();
         }

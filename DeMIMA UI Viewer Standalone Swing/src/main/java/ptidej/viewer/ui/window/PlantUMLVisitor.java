@@ -41,7 +41,7 @@ public class PlantUMLVisitor implements IWalker{
 
 	@Override
 	public void close(IClass aClass) {
-		visitResult.append("\n}");
+		visitResult.append("\n");
 		visitResult.append("}");
 		visitResult.append("\n");
 		
@@ -70,14 +70,14 @@ public class PlantUMLVisitor implements IWalker{
 
 	@Override
 	public void close(IInterface anInterface) {
-		visitResult.append("\n}");
+		visitResult.append("\n");
 		visitResult.append("}");
 		visitResult.append("\n");
 	}
 
 	@Override
 	public void close(IMemberClass aMemberClass) {
-		visitResult.append("\n}");
+		visitResult.append("\n");
 		visitResult.append("}");
 		visitResult.append("\n");
 	}
@@ -90,7 +90,7 @@ public class PlantUMLVisitor implements IWalker{
 
 	@Override
 	public void close(IMemberInterface aMemberInterface) {
-		visitResult.append("\n}");
+		visitResult.append("\n");
 		visitResult.append("}");
 		visitResult.append("\n");
 	}
@@ -102,14 +102,14 @@ public class PlantUMLVisitor implements IWalker{
 
 	@Override
 	public void close(IPackage aPackage) {
-		visitResult.append("\n}");
+		visitResult.append("\n");
 		visitResult.append("}");
 		visitResult.append("\n");
 	}
 
 	@Override
 	public void close(IPackageDefault aPackage) {
-		visitResult.append("\n}");
+		visitResult.append("\n");
 		visitResult.append("}");
 		visitResult.append("\n");
 	}
@@ -132,22 +132,22 @@ public class PlantUMLVisitor implements IWalker{
 
 	@Override
 	public void open(IClass aClass) {
-		Iterator<IInterface> implementedInterfaceIterator = aClass.getIteratorOnImplementedInterfaces();
+		Iterator<IConstituent> implementedInterfaceIterator = aClass.getIteratorOnImplementedInterfaces();
 		
 		while (implementedInterfaceIterator.hasNext()) {
-			IInterface implementedInterface = implementedInterfaceIterator.next();
+			IConstituent implementedInterface = implementedInterfaceIterator.next();
 			visitResult.append(implementedInterface.getName());
 			visitResult.append(" <|.." );
-			visitResult.append(aClass.getName());
+			visitResult.append(aClass.getDisplayName() + "\n");
 		}
 		
-		Iterator<IClass> inheritedClassesIterator = aClass.getIteratorOnInheritedEntities();
+		Iterator<IConstituent> inheritedClassesIterator = aClass.getIteratorOnInheritedEntities();
 		
 		while (inheritedClassesIterator.hasNext()) {
-			IClass inheritedClass = inheritedClassesIterator.next();
+			IConstituent inheritedClass = inheritedClassesIterator.next();
 			visitResult.append(inheritedClass.getName());
 			visitResult.append(" <|--" );
-			visitResult.append(aClass.getName());
+			visitResult.append(aClass.getDisplayName() + "\n");
 		}
 		
 		visitResult.append("class ");
@@ -184,13 +184,13 @@ public class PlantUMLVisitor implements IWalker{
 
 	@Override
 	public void open(IInterface anInterface) {
-		Iterator<IInterface> implementedInterfaceIterator = anInterface.getIteratorOnInheritedEntities();
+		Iterator<IConstituent> implementedInterfaceIterator = anInterface.getIteratorOnInheritedEntities();
 		
 		while (implementedInterfaceIterator.hasNext()) {
-			IInterface implementedInterface = implementedInterfaceIterator.next();
+			IConstituent implementedInterface = implementedInterfaceIterator.next();
 			visitResult.append(implementedInterface.getName());
 			visitResult.append(" <|.." );
-			visitResult.append(anInterface.getName());
+			visitResult.append(anInterface.getDisplayName() + "\n");
 		}
 		
 		visitResult.append("interface ");
