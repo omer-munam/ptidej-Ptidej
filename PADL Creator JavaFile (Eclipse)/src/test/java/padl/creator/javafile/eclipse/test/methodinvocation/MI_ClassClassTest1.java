@@ -20,7 +20,6 @@ import padl.kernel.ICodeLevelModel;
 import padl.kernel.IFirstClassEntity;
 import padl.kernel.IMethod;
 import padl.kernel.IMethodInvocation;
-import util.io.Files;
 import util.io.ProxyConsole;
 
 public class MI_ClassClassTest1 extends TestCase {
@@ -33,11 +32,11 @@ public class MI_ClassClassTest1 extends TestCase {
 	//we will now consider only the type CLASS_CLASS and not CLASS_CLASS_FROM_FIELD
 	public void testCLASS_CLASS1() {
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/src/main/java/";
+			"../PADL Creator JavaFile (Eclipse) Tests/src/";
 		final String[] javaFiles =
 			new String[] {
-				"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/A.java",
-				"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/Aggregation_CLASS_CLASS_FROM_FIELD_1.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/A.java",
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/Aggregation_CLASS_CLASS_FROM_FIELD_1.java" };
 		final String classPathEntry = "";
 		final ICodeLevelModel javaModel =
 			Utils.createCompleteJavaFilesPadlModel(
@@ -48,8 +47,8 @@ public class MI_ClassClassTest1 extends TestCase {
 
 		final String[] classFiles =
 			new String[] {
-				"../PADL Creator JavaFile (Eclipse)/target/classes/padl/example/relationship/A.class",
-				"../PADL Creator JavaFile (Eclipse)/target/classes/padl/example/relationship/Aggregation_CLASS_CLASS_FROM_FIELD_1.class" };
+					"../PADL Creator JavaFile (Eclipse) Tests/bin/padl/example/relationship/A.class",
+					"../PADL Creator JavaFile (Eclipse) Tests/bin/padl/example/relationship/Aggregation_CLASS_CLASS_FROM_FIELD_1.class" };
 		final ICodeLevelModel classModel =
 			Utils.createCompleteJavaClassesPadlModel("", classFiles);
 
@@ -129,11 +128,11 @@ public class MI_ClassClassTest1 extends TestCase {
 
 	public void testCLASS_CLASS2() {
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/src/main/java/";
+			"../PADL Creator JavaFile (Eclipse) Tests/src/";
 		final String[] javaFiles =
 			new String[] {
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/A.java",
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/Aggregation_CLASS_CLASS_FROM_FIELD_2.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/A.java",
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/Aggregation_CLASS_CLASS_FROM_FIELD_2.java" };
 		final String classPathEntry = "";
 		final ICodeLevelModel javaModel =
 			Utils.createCompleteJavaFilesPadlModel(

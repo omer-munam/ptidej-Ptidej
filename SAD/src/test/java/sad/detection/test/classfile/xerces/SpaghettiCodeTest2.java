@@ -18,7 +18,6 @@ import padl.generator.helper.ModelGenerator;
 import padl.kernel.IIdiomLevelModel;
 import sad.designsmell.detection.IDesignSmellDetection;
 import sad.designsmell.detection.repository.SpaghettiCode.SpaghettiCodeDetection;
-import util.io.Files;
 import util.io.ProxyDisk;
 
 /**

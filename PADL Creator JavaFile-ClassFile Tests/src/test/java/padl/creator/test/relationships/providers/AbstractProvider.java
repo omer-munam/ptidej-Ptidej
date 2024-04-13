@@ -12,8 +12,6 @@ package padl.creator.test.relationships.providers;
 
 import java.io.File;
 
-import util.io.Files;
-
 abstract class AbstractProvider {
 	private static final String BIN_FOLDER =
 		"../PADL Creator JavaFile-ClassFile Tests/target/test-classes/";

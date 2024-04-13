@@ -24,7 +24,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import ptidej.solver.Occurrence;
 import ptidej.solver.OccurrenceBuilder;
 import ptidej.solver.OccurrenceComponent;
-import util.io.Files;
 import util.io.ProxyDisk;
 
 /**
@@ -42,22 +41,22 @@ public class EntitiesPlayingRolesExtractor {
 	//	private static final String DestinationFile =
 	//		"D:/Documents/Work/2009/ICSM (Pattern Composition)/data validated/ListOfEntitiesPlayingSomeRoles.csv";
 	//	private static final String SourcePath =
-	//		"../DeMIMA Solver Data/JSME'08 (bis)/All Occurrences of Command/";
+	//		"../Ptidej Solver Data/JSME'08 (bis)/All Occurrences of Command/";
 	//	private static final String DestinationFile =
-	//		"../DeMIMA Solver Data/JSME'08 (bis)/All Occurrences of Command/ListOfEntitiesPlayingSomeRoles.csv";
+	//		"../Ptidej Solver Data/JSME'08 (bis)/All Occurrences of Command/ListOfEntitiesPlayingSomeRoles.csv";
 	//	private static final String SourcePath =
-	//		"../DeMIMA Solver Data/JSME'08 (bis)/First Few Occurrences of Command/";
+	//		"../Ptidej Solver Data/JSME'08 (bis)/First Few Occurrences of Command/";
 	//	private static final String DestinationFile =
-	//		"../DeMIMA Solver Data/JSME'08 (bis)/First Few Occurrences of Command/ListOfEntitiesPlayingSomeRoles.csv";
+	//		"../Ptidej Solver Data/JSME'08 (bis)/First Few Occurrences of Command/ListOfEntitiesPlayingSomeRoles.csv";
 	//	private static final String SourcePath =
-	//		"../DeMIMA Solver Data/JSME'08 (bis)/First Occurrence of Command/";
+	//		"../Ptidej Solver Data/JSME'08 (bis)/First Occurrence of Command/";
 	//	private static final String DestinationFile =
-	//		"../DeMIMA Solver Data/JSME'08 (bis)/First Occurrence of Command/ListOfEntitiesPlayingSomeRoles.csv";
+	//		"../Ptidej Solver Data/JSME'08 (bis)/First Occurrence of Command/ListOfEntitiesPlayingSomeRoles.csv";
 
 	private static final String SourcePath =
-			"../DeMIMA Solver Data/JSME'08 (bis)/First Few Occurrences of Command/";
+		"../Ptidej Solver Data/JSME'08 (bis)/First Few Occurrences of Command/";
 	private static final String DestinationFile =
-			"../DeMIMA Solver Data/JSME'08 (bis)/First Few Occurrences of Command/ListOfEntitiesPlayingSomeRoles.csv";
+		"../Ptidej Solver Data/JSME'08 (bis)/First Few Occurrences of Command/ListOfEntitiesPlayingSomeRoles.csv";
 
 	public static void main(final String[] args) {
 		final EntitiesPlayingRolesExtractor extractor =

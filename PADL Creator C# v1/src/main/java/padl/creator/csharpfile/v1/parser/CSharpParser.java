@@ -16,8 +16,6 @@ package padl.creator.csharpfile.v1.parser;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-
 import org.antlr.runtime.BaseRecognizer;
 import org.antlr.runtime.DFA;
 import org.antlr.runtime.EarlyExitException;
@@ -34,10 +32,7 @@ import org.antlr.runtime.tree.CommonTreeAdaptor;
 import org.antlr.runtime.tree.RewriteEarlyExitException;
 import org.antlr.runtime.tree.RewriteRuleSubtreeStream;
 import org.antlr.runtime.tree.RewriteRuleTokenStream;
-import org.antlr.runtime.tree.TreeAdaptor
-
-
-
+import org.antlr.runtime.tree.TreeAdaptor;
 import padl.csharp.kernel.ICSharpFactory;
 import padl.kernel.IClass;
 import padl.kernel.ICodeLevelModel;
@@ -47,9 +42,7 @@ import padl.kernel.IField;
 import padl.kernel.IInterface;
 import padl.kernel.IMethod;
 import padl.kernel.IParameter;
-import padl.kernel.exception.ModelDeclarationExceptio
-import util.io.Files;n;
-import util.io.Files;
+import padl.kernel.exception.ModelDeclarationException;
 import util.io.ProxyConsole;
 import util.lang.Modifier;
 //import padl.kernel.IDestructor;
@@ -118,7 +111,7 @@ public class CSharpParser extends Parser implements Constants {
 		return Constants.tokenNames;
 	}
 	public String getGrammarFileName() {
-		return "../PADL Creator C# v1/target/test-classes/CSharp.g3";
+		return "../rsc/CSharp.g3";
 	}
 
 	private static ICodeLevelModel codeLevelModel;

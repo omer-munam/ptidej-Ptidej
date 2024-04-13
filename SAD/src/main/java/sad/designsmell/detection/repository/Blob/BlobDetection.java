@@ -31,7 +31,6 @@ import sad.designsmell.detection.repository.AbstractDesignSmellDetection;
 import sad.kernel.impl.DesignSmell;
 import sad.util.OperatorsCodeSmells;
 import sad.util.Relationships;
-import util.io.Files;
 
 public class BlobDetection extends AbstractDesignSmellDetection implements IDesignSmellDetection {
 	private final OperatorsCodeSmells operators;

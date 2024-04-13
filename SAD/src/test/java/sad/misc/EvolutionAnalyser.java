@@ -28,7 +28,6 @@ import java.util.Set;
 import ptidej.solver.Occurrence;
 import ptidej.solver.OccurrenceBuilder;
 import ptidej.solver.OccurrenceComponent;
-import util.io.Files;
 import util.io.ReaderInputStream;
 
 /**
@@ -52,7 +51,7 @@ import util.io.ReaderInputStream;
 public class EvolutionAnalyser {
 	private static final String CAPTION = "Antipatterns";
 	private static final String FILE_ROOT =
-		"../SAD Test/rsc/evolutionWithBugs/resultsOfDefects/Results for ";
+		"rsc/evolutionWithBugs/resultsOfDefects/Results for ";
 	private static final String MAIN_PATH =
 		"../SAD Tests/rsc/evolutionWithBugs/resultsOfDefects/test/";
 

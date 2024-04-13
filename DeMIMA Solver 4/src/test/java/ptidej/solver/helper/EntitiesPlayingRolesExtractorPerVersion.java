@@ -24,7 +24,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import ptidej.solver.Occurrence;
 import ptidej.solver.OccurrenceBuilder;
 import ptidej.solver.OccurrenceComponent;
-import util.io.Files;
 import util.io.ProxyDisk;
 
 /**
@@ -48,23 +47,23 @@ import util.io.ProxyDisk;
  */
 public class EntitiesPlayingRolesExtractorPerVersion {
 
+	//			private static final String sourcePath =
+	//				"../Ptidej Solver Data/CheckStyle Versions/";
+	//		private static final String destinationPath =
+	//			"../Ptidej Solver Data/Pattern Classes/Checkstyle/DesignPatterns/";
 	//	private static final String sourcePath =
-	//		"../DeMIMA Solver Data/CheckStyle Versions/";
+	//		"../SAD Tests/rsc/CheckStyle Versions/";
 	//	private static final String destinationPath =
-	//		"../DeMIMA Solver Data/Pattern Classes/Checkstyle/DesignPatterns/";
-	//	private static final String sourcePath =
-	//		"../SAD/test-classes/CheckStyle Versions/";
-	//	private static final String destinationPath =
-	//		"../DeMIMA Solver Data/Pattern Classes/Checkstyle/Antipatterns/";
+	//		"../Ptidej Solver Data/Pattern Classes/Checkstyle/Antipatterns/";
 
-	//	private static final String sourcePath =
-	//		"../DeMIMA Solver Data/ArgoUml Versions 1/";
-	//	private static final String destinationPath =
-	//		"../DeMIMA Solver Data/Pattern Classes/ArgoUml/DesignPatterns/";
+	//			private static final String sourcePath =
+	//				"../Ptidej Solver Data/ArgoUml Versions 1/";
+	//		private static final String destinationPath =
+	//			"../Ptidej Solver Data/Pattern Classes/ArgoUml/DesignPatterns/";
 	private static final String sourcePath =
-			"../SAD/test-classes/ArgoUml Versions 1/";
+		"../SAD Tests/rsc/ArgoUml Versions 1/";
 	private static final String destinationPath =
-			"../DeMIMA Solver Data/Pattern Classes/ArgoUml/Antipatterns/";
+		"../Ptidej Solver Data/Pattern Classes/ArgoUml/Antipatterns/";
 
 	public static void main(final String[] args) {
 		final EntitiesPlayingRolesExtractorPerVersion extractor =

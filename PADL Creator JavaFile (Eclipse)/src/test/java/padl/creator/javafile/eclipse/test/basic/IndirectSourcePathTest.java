@@ -11,7 +11,6 @@
 package padl.creator.javafile.eclipse.test.basic;
 
 import org.junit.Assert;
-
 import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.creator.javafile.eclipse.util.PadlParserUtil;
@@ -20,7 +19,6 @@ import padl.kernel.Constants;
 import padl.kernel.ICodeLevelModel;
 import padl.kernel.IPackage;
 import padl.kernel.impl.Factory;
-import util.io.Files;
 
 public class IndirectSourcePathTest extends TestCase {
 
@@ -30,7 +28,7 @@ public class IndirectSourcePathTest extends TestCase {
 
 	public void testSourcePathIndirect() {
 		final String javaFilesFolderPath = "../Java Parser/";
-		final String javaFilesFolderPath1 = "../Java Parser/src/main/java/";
+		final String javaFilesFolderPath1 = "../Java Parser/src/";
 		final String classPathEntry = "";
 
 		//Model from source code
@@ -59,8 +57,8 @@ public class IndirectSourcePathTest extends TestCase {
 		final String sourcePath = "WHATEVER";
 		final String[] javaFiles =
 			new String[] {
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes//PADL testdata/padl/example/packaje/",
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes//Aminata testdata/MyDefaultClass.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/packaje/",
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/Aminata testdata/MyDefaultClass.java" };
 		final String classPathEntry = "";
 
 		ICodeLevelModel model = Factory.getInstance().createCodeLevelModel("");

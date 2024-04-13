@@ -1,7 +1,6 @@
 package padl.creator.cppfile.eclipse.test.big;
 
 import java.util.ArrayList;
-
 import junit.framework.TestCase;
 import padl.creator.cppfile.eclipse.CPPCreator;
 import padl.creator.javafile.eclipse.CompleteJavaFileCreator;
@@ -10,7 +9,6 @@ import padl.kernel.ICodeLevelModelCreator;
 import padl.kernel.exception.CreationException;
 import padl.kernel.impl.Factory;
 import padl.visitor.IWalker;
-import util.io.Files;
 
 public class TestCaseJnifctglobale extends TestCase {
 	protected void setUp() throws Exception {

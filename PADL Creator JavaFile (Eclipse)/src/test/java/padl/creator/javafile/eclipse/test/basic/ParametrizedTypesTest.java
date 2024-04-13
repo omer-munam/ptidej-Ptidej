@@ -11,7 +11,6 @@
 package padl.creator.javafile.eclipse.test.basic;
 
 import org.junit.Assert;
-
 import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.kernel.IClass;
@@ -20,7 +19,6 @@ import padl.kernel.IConstructor;
 import padl.kernel.IPackage;
 import padl.kernel.IParameter;
 import padl.kernel.impl.Factory;
-import util.io.Files;
 
 public class ParametrizedTypesTest extends TestCase {
 
@@ -31,9 +29,9 @@ public class ParametrizedTypesTest extends TestCase {
 
 	public void testParametrizedType() {
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/target/test-classes//PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes//PADL testdata/padl/example/collection/" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/collection/" };
 		final String classPathEntry = "";
 
 		ICodeLevelModel model = Factory.getInstance().createCodeLevelModel("");

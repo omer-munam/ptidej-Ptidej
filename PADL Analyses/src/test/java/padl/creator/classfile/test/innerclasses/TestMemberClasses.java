@@ -47,7 +47,7 @@ public class TestMemberClasses extends ClassFilePrimitive {
 					new String[] {
 							"../PADL Creator ClassFile Tests/bin/padl/example/innerclasses/Member.class",
 							"../PADL Creator ClassFile Tests/bin/padl/example/innerclasses/Member$B.class",
-							"../PADL Creator ClassFile Tests/bin/padl/example/innerclasses/Anonymous$1B.class" }));
+							"../PADL Creator ClassFile Tests/bin/padl/example/innerclasses/Anonymous$1$B.class" }));
 
 			final IIdiomLevelModel idiomLevelModel =
 				(IIdiomLevelModel) new AACRelationshipsAnalysis()
@@ -58,13 +58,13 @@ public class TestMemberClasses extends ClassFilePrimitive {
 
 			TestMemberClasses.Elements =
 				Util
-					.getArrayOfElements(TestMemberClasses.FirstClassEntities[2]);
+					.getArrayOfElements(TestMemberClasses.FirstClassEntities[1]);
 		}
 	}
 	public void testClasses() {
 		Assert.assertEquals(
 			"Number of entities",
-			3,
+			2,
 			TestMemberClasses.FirstClassEntities.length);
 	}
 	public void testMemberClass() {

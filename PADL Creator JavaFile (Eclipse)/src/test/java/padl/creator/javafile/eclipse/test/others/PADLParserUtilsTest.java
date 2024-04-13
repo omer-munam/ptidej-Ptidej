@@ -11,13 +11,11 @@
 package padl.creator.javafile.eclipse.test.others;
 
 import org.junit.Assert;
-
 import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.CompleteJavaFileCreator;
 import padl.kernel.ICodeLevelModel;
 import padl.kernel.exception.CreationException;
 import padl.kernel.impl.Factory;
-import util.io.Files;
 import util.io.ProxyConsole;
 
 public class PADLParserUtilsTest extends TestCase {
@@ -36,7 +34,7 @@ public class PADLParserUtilsTest extends TestCase {
 	// "./rsc/sam test data/restlet/";
 	// /*final String[] javaFiles =
 	// new String[] {
-	// "../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/annotator/"
+	// "../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/annotator/"
 	// };*/
 	// final String classPathEntry = "";
 	// IIdiomLevelModel javaIdiomModel =
@@ -54,7 +52,7 @@ public class PADLParserUtilsTest extends TestCase {
 	 */
 	public void testGetTypeName() {
 		ProxyConsole.getInstance().debugOutput().println("testGetTypeName");
-		final String sourcePath = "../PADL Creator JavaFile (Eclipse)/target/test-classes//sam test data/restlet/";
+		final String sourcePath = "../PADL Creator JavaFile (Eclipse) Tests/rsc/sam test data/restlet/";
 		final ICodeLevelModel model =
 			Factory.getInstance().createCodeLevelModel("");
 

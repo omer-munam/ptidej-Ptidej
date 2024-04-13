@@ -18,7 +18,6 @@ import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.kernel.ICodeLevelModel;
 import padl.kernel.IFirstClassEntity;
-import util.io.Files;
 import util.io.ProxyDisk;
 
 public class ArgoUMLTest extends TestCase {
@@ -27,7 +26,7 @@ public class ArgoUMLTest extends TestCase {
 	}
 	public void testArgouml() {
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/target/test-classes/argouml/";
+			"../PADL Creator JavaFile (Eclipse) Tests/data/argouml/";
 		final String classPathEntry = "";
 
 		final ICodeLevelModel model =

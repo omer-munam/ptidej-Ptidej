@@ -24,7 +24,6 @@ import ptidej.solver.OccurrenceComponent;
 import ptidej.solver.occurrence.PrincipalComponentAnalysis;
 import ptidej.solver.occurrence.PrincipalComponents;
 import ptidej.solver.occurrence.ReducedOccurrence;
-import util.io.Files;
 import util.io.ReaderInputStream;
 
 
@@ -34,7 +33,7 @@ import util.io.ReaderInputStream;
  */
 public class EvolutionAnalyser {
 	public static void main(final String[] args) {
-		final String MAIN_PATH = "../DeMIMA Solver Data/Azureus Versions/";
+		final String MAIN_PATH = "../Ptidej Solver Data/Azureus Versions/";
 
 		final File directory = new File(MAIN_PATH);
 		final String[] list = directory.list();

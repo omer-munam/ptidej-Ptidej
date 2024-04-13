@@ -19,7 +19,6 @@ import padl.kernel.IClass;
 import padl.kernel.ICodeLevelModel;
 import padl.kernel.IPackage;
 import padl.kernel.impl.Factory;
-import util.io.Files;
 
 public class PackagesTest extends TestCase {
 
@@ -34,9 +33,9 @@ public class PackagesTest extends TestCase {
 
 	//	public void testPackageIncludedInAnotherPackage() {
 	//		final String sourcePath =
-	//			"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+	//			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 	//		final String[] javaFiles =
-	//			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/packaje/" };
+	//			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/packaje/" };
 	//		final String classPathEntry = "";
 	//
 	//		ICodeLevelModel model = Factory.getInstance().createCodeLevelModel("");
@@ -60,11 +59,11 @@ public class PackagesTest extends TestCase {
 	public void testDefaultPackages() {
 
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/target/test-classes/Aminata testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/Aminata testdata/";
 		final String[] javaFiles =
 			new String[] {
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/Aminata testdata/MyDefaultClass.java",
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/Aminata testdata/MyDefaultClass2.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/Aminata testdata/MyDefaultClass.java",
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/Aminata testdata/MyDefaultClass2.java" };
 		final String classPathEntry = "";
 
 		final ICodeLevelModel model =
@@ -101,11 +100,11 @@ public class PackagesTest extends TestCase {
 
 	public void testPackageIncludedInAnotherPackage1() {
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/target/test-classes/Aminata testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/Aminata testdata/";
 		final String[] javaFiles =
 			new String[] {
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/packaje/",
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/Aminata testdata/MyDefaultClass.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/packaje/",
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/Aminata testdata/MyDefaultClass.java" };
 		final String classPathEntry = "";
 
 		ICodeLevelModel model = Factory.getInstance().createCodeLevelModel("");

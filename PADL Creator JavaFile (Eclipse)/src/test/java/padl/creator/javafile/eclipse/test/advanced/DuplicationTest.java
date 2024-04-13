@@ -11,14 +11,12 @@
 package padl.creator.javafile.eclipse.test.advanced;
 
 import org.junit.Assert;
-
 import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.creator.javafile.eclipse.util.PadlParserUtil;
 import padl.kernel.IClass;
 import padl.kernel.ICodeLevelModel;
 import padl.kernel.IMemberClass;
-import util.io.Files;
 
 public class DuplicationTest extends TestCase {
 
@@ -36,11 +34,11 @@ public class DuplicationTest extends TestCase {
 	public void testClassesDuplication() {
 
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
 			new String[] {
-					"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/classes/in/A.java",
-					"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/classes/out/A.java", };
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/classes/in/A.java",
+					"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/classes/out/A.java", };
 		final String classPathEntry = "";
 
 		final ICodeLevelModel model =
@@ -66,9 +64,9 @@ public class DuplicationTest extends TestCase {
 	public void testClassesDuplication2() {
 
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/classes/script/" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/classes/script/" };
 		// contains 2 java.lang.Class.java
 		final String classPathEntry = "";
 
@@ -95,9 +93,9 @@ public class DuplicationTest extends TestCase {
 	public void testClassesDuplication3() {
 
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/classes/" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/classes/" };
 		// contains 4 java.lang.Class.java
 		final String classPathEntry = "";
 
@@ -129,9 +127,9 @@ public class DuplicationTest extends TestCase {
 	public void testClassesDuplication4() {
 
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/classes1/" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/classes1/" };
 
 		final String classPathEntry = "";
 
@@ -161,9 +159,9 @@ public class DuplicationTest extends TestCase {
 	public void testMemberClassesDuplication() {
 
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/memberClasses/$className$.java" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/memberClasses/$className$.java" };
 
 		final String classPathEntry = "";
 
@@ -193,9 +191,9 @@ public class DuplicationTest extends TestCase {
 	public void testMemberClassesDuplication1() {
 
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/memberClasses/TestB.java" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/memberClasses/TestB.java" };
 
 		final String classPathEntry = "";
 
@@ -225,9 +223,9 @@ public class DuplicationTest extends TestCase {
 	 */
 	public void testMethodsAndFieldsDuplication() {
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/methods/DuplicateMethods.java" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/methods/DuplicateMethods.java" };
 
 		final String classPathEntry = "";
 
@@ -272,9 +270,9 @@ public class DuplicationTest extends TestCase {
 	public void testPackageWithClasseDuplication1() {
 
 		final String sourcePath =
-				"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/eclipse/duplication/Packaje1/Packaje1.java" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/eclipse/duplication/Packaje1/Packaje1.java" };
 
 		final String classPathEntry = "";
 

@@ -24,7 +24,6 @@ import padl.kernel.ICodeLevelModel;
 import padl.kernel.IConstituent;
 import padl.kernel.IContainer;
 import padl.kernel.IFactory;
-import util.io.Files;
 import util.io.ProxyConsole;
 
 public class TestModelCreation extends TestCase {

@@ -26,7 +26,6 @@ import ptidej.solver.Problem;
 import ptidej.solver.domain.Generator;
 import ptidej.solver.domain.Manager;
 import ptidej.solver.problem.CompositeMotif;
-import util.io.Files;
 import util.io.ProxyDisk;
 import util.io.ReaderInputStream;
 
@@ -38,7 +37,7 @@ public class DesignMotifIdentificationCallerSimple {
 	public static void main(final String[] args) throws FileNotFoundException,
 			IOException {
 
-		final String path = "../DeMIMA Solver Tests/rsc/JHotDraw v5.2.jar";
+		final String path = "../Ptidej Solver Tests/rsc/JHotDraw v5.2.jar";
 		final String name = "JHotDraw v5.2.ini";
 
 		final IIdiomLevelModel idiomLevelModel =

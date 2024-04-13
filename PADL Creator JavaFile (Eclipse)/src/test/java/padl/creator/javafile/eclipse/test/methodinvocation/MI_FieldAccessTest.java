@@ -11,16 +11,13 @@
 package padl.creator.javafile.eclipse.test.methodinvocation;
 
 import java.util.Iterator;
-
 import org.junit.Assert;
-
 import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.kernel.ICodeLevelModel;
 import padl.kernel.IFirstClassEntity;
 import padl.kernel.IMethod;
 import padl.kernel.IMethodInvocation;
-import util.io.Files;
 import util.io.ProxyConsole;
 
 public class MI_FieldAccessTest extends TestCase {
@@ -31,11 +28,11 @@ public class MI_FieldAccessTest extends TestCase {
 
 	public void testFieldAccess_CLASS_CLASS() {
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/src/main/java/";
+			"../PADL Creator JavaFile (Eclipse) Tests/src/";
 		final String[] javaFiles =
 			new String[] {
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/A.java",
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/FieldAccess_CLASS_CLASS.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/A.java",
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/FieldAccess_CLASS_CLASS.java" };
 		final String classPathEntry = "";
 		final ICodeLevelModel javaModel =
 			Utils.createCompleteJavaFilesPadlModel(
@@ -104,11 +101,11 @@ public class MI_FieldAccessTest extends TestCase {
 
 	public void testFieldAccess_INSTANCE_CLASS() {
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/src/main/java/";
+			"../PADL Creator JavaFile (Eclipse) Tests/src/";
 		final String[] javaFiles =
 			new String[] {
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/A.java",
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/FieldAccess_INSTANCE_CLASS.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/A.java",
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/FieldAccess_INSTANCE_CLASS.java" };
 		final String classPathEntry = "";
 		final ICodeLevelModel javaModel =
 			Utils.createCompleteJavaFilesPadlModel(
@@ -174,11 +171,11 @@ public class MI_FieldAccessTest extends TestCase {
 
 	public void testFieldAccess_INSTANCE_INSTANCE() {
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/src/main/java/";
+			"../PADL Creator JavaFile (Eclipse) Tests/src/";
 		final String[] javaFiles =
 			new String[] {
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/A.java",
-					"../PADL Creator JavaFile (Eclipse)/src/main/java/padl/example/relationship/FieldAccess_INSTANCE_INSTANCE.java" };
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/A.java",
+					"../PADL Creator JavaFile (Eclipse) Tests/src/padl/example/relationship/FieldAccess_INSTANCE_INSTANCE.java" };
 		final String classPathEntry = "";
 		final ICodeLevelModel javaModel =
 			Utils.createCompleteJavaFilesPadlModel(

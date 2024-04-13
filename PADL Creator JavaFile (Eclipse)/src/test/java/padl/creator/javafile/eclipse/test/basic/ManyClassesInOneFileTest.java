@@ -16,7 +16,6 @@ import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.kernel.IClass;
 import padl.kernel.ICodeLevelModel;
 import padl.kernel.impl.Factory;
-import util.io.Files;
 
 public class ManyClassesInOneFileTest extends TestCase {
 
@@ -30,9 +29,9 @@ public class ManyClassesInOneFileTest extends TestCase {
 	 */
 	public void testManyClassesInOneFile() {
 		final String sourcePath =
-			"../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/";
 		final String[] javaFiles =
-			new String[] { "../PADL Creator JavaFile (Eclipse)/target/test-classes/PADL testdata/padl/example/manyClassesInOneFile/ManyClassesInOneFile.java" };
+			new String[] { "../PADL Creator JavaFile (Eclipse) Tests/rsc/PADL testdata/padl/example/manyClassesInOneFile/ManyClassesInOneFile.java" };
 		final String classPathEntry = "";
 
 		ICodeLevelModel model = Factory.getInstance().createCodeLevelModel("");

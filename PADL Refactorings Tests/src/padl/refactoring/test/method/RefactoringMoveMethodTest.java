@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2001-2014 Yann-Gaï¿½l Guï¿½hï¿½neuc and others.
+ * Copyright (c) 2001-2014 Yann-Gaël Guéhéneuc and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Public License v2.0
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * 
  * Contributors:
- *     Yann-Gaï¿½l Guï¿½hï¿½neuc and others, see in file; API and its implementation
+ *     Yann-Gaël Guéhéneuc and others, see in file; API and its implementation
  ******************************************************************************/
 package padl.refactoring.test.method;
 
@@ -22,7 +22,6 @@ import padl.kernel.IIdiomLevelModel;
 import padl.kernel.IMethod;
 import padl.kernel.impl.Factory;
 import padl.refactoring.method.RefactoringMoveMethod;
-import util.io.Files;
 
 /**
  * @author Saliha Bouden
@@ -41,7 +40,7 @@ public class RefactoringMoveMethodTest extends TestCase {
 		super(name);
 	}
 
-	// construire le modï¿½le
+	// construire le modèle
 	protected void setUp() throws Exception {
 		//if (RefactoringMoveMethodTest.IdiomLevelModel == null) {
 		final ICodeLevelModel codeLevelModel =
@@ -70,8 +69,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 				"acme.GifEncoder",
 				"encodeStart");
 		if (aMethod != null) {
-			System.out.println("-----ï¿½" + sourceClass.getDisplayName());
-			System.out.println("-----ï¿½" + aMethod.getDisplayName());
+			System.out.println("-----­" + sourceClass.getDisplayName());
+			System.out.println("-----­" + aMethod.getDisplayName());
 
 			refactoringMethod.moveMethod(
 				"encodeStart",
@@ -83,8 +82,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 					"acme.GifEncoder",
 					"encodeStart");
 			if (sourceClass != null) {
-				System.out.println("-----ï¿½" + sourceClass.getDisplayName());
-				System.out.println("-----ï¿½" + aMethod.getDisplayName());
+				System.out.println("-----­" + sourceClass.getDisplayName());
+				System.out.println("-----­" + aMethod.getDisplayName());
 			}
 			IClass targetClass =
 				refactoringMethod.getClassContainsMethodToRefactor(
@@ -97,8 +96,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 						"encodeStart");
 				if (theMethod != null) {
 
-					System.out.println("-----ï¿½" + targetClass.getDisplayName());
-					System.out.println("-----ï¿½" + theMethod.getDisplayName());
+					System.out.println("-----­" + targetClass.getDisplayName());
+					System.out.println("-----­" + theMethod.getDisplayName());
 					Assert.assertEquals(
 						"Name of the new Class",
 						"diagram.AbstractDiagramModel",
@@ -122,8 +121,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 				"acme.ImageEncoder",
 				"encodePixelsWrapper");
 		if (aMethod != null) {
-			System.out.println("-----ï¿½" + sourceClass.getDisplayName());
-			System.out.println("-----ï¿½" + aMethod.getDisplayName());
+			System.out.println("-----­" + sourceClass.getDisplayName());
+			System.out.println("-----­" + aMethod.getDisplayName());
 
 			refactoringMethod.moveMethod(
 				"encodePixelsWrapper",
@@ -135,8 +134,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 					"acme.ImageEncoder",
 					"encodePixelsWrapper");
 			if (sourceClass != null) {
-				System.out.println("-----ï¿½" + sourceClass.getDisplayName());
-				System.out.println("-----ï¿½" + aMethod.getDisplayName());
+				System.out.println("-----­" + sourceClass.getDisplayName());
+				System.out.println("-----­" + aMethod.getDisplayName());
 			}
 			IClass targetClass =
 				refactoringMethod.getClassContainsMethodToRefactor(
@@ -149,8 +148,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 						"encodePixelsWrapper");
 				if (theMethod != null) {
 
-					System.out.println("-----ï¿½" + targetClass.getDisplayName());
-					System.out.println("-----ï¿½" + theMethod.getDisplayName());
+					System.out.println("-----­" + targetClass.getDisplayName());
+					System.out.println("-----­" + theMethod.getDisplayName());
 					Assert.assertEquals(
 						"Name of the new Class",
 						"diagram.AbstractDiagramModel",
@@ -172,8 +171,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 			refactoringMethod
 				.getMethodToRefactor("acme.GifEncoder", "GetPixel");
 		if (aMethod != null) {
-			System.out.println("-----ï¿½" + sourceClass.getDisplayName());
-			System.out.println("-----ï¿½" + aMethod.getDisplayName());
+			System.out.println("-----­" + sourceClass.getDisplayName());
+			System.out.println("-----­" + aMethod.getDisplayName());
 
 			refactoringMethod.moveMethod(
 				"GetPixel",
@@ -185,8 +184,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 					"acme.GifEncoder",
 					"GetPixel");
 			if (sourceClass != null) {
-				System.out.println("-----ï¿½" + sourceClass.getDisplayName());
-				System.out.println("-----ï¿½" + aMethod.getDisplayName());
+				System.out.println("-----­" + sourceClass.getDisplayName());
+				System.out.println("-----­" + aMethod.getDisplayName());
 			}
 			IClass targetClass =
 				refactoringMethod.getClassContainsMethodToRefactor(
@@ -199,8 +198,8 @@ public class RefactoringMoveMethodTest extends TestCase {
 						"GetPixel");
 				if (theMethod != null) {
 
-					System.out.println("-----ï¿½" + targetClass.getDisplayName());
-					System.out.println("-----ï¿½" + theMethod.getDisplayName());
+					System.out.println("-----­" + targetClass.getDisplayName());
+					System.out.println("-----­" + theMethod.getDisplayName());
 					Assert.assertEquals(
 						"Name of the new Class",
 						"diagram.AbstractDiagramModel",

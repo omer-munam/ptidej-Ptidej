@@ -13,9 +13,7 @@ package padl.creator.javafile.eclipse.test.methodinvocation;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import org.junit.Assert;
-
 import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.kernel.IClass;
@@ -23,7 +21,6 @@ import padl.kernel.ICodeLevelModel;
 import padl.kernel.IConstructor;
 import padl.kernel.IMethodInvocation;
 import padl.kernel.IOperation;
-import util.io.Files;
 import util.io.ProxyConsole;
 
 public class JavaFilesModelMethodInvocationExplorer extends TestCase {
@@ -32,7 +29,7 @@ public class JavaFilesModelMethodInvocationExplorer extends TestCase {
 	}
 	public void testMethodInvocationInPadl() {
 		final String path =
-			"../PADL Creator JavaFile (Eclipse)/target/test-classes//padl/example/methodInvocation/";
+			"../PADL Creator JavaFile (Eclipse) Tests/rsc/padl/example/methodInvocation/";
 		final ICodeLevelModel model =
 			Utils.createCompleteJavaFilesPadlModel("", path, "");
 
@@ -40,8 +37,7 @@ public class JavaFilesModelMethodInvocationExplorer extends TestCase {
 		listOfClasses.add(model
 			.getTopLevelEntityFromID("padl.example.methodinvocation.A"));
 
-		final Iterator
-		iterator = listOfClasses.iterator();
+		final Iterator iterator = listOfClasses.iterator();
 		while (iterator.hasNext()) {
 			final IClass clazz = (IClass) iterator.next();
 			ProxyConsole

@@ -14,7 +14,6 @@ import junit.framework.TestCase;
 import padl.creator.javafile.eclipse.test.util.RelaxedModelComparatorReporter;
 import padl.creator.javafile.eclipse.test.util.Utils;
 import padl.kernel.ICodeLevelModel;
-import util.io.Files;
 
 public class ModelsDifferencesReporter extends TestCase {
 	public ModelsDifferencesReporter(final String aName) {
@@ -27,9 +26,9 @@ public class ModelsDifferencesReporter extends TestCase {
 		 * 
 		 */
 		System.out.println("Models differences reporter");
-		final String javaFilesFolderPath = "../Java Parser/src/main/java/";
+		final String javaFilesFolderPath = "../Java Parser/src/";
 		final String classPathEntry = "";
-		//	final String classFilesFolderPath = "../Java Parser/target/classes/";
+		//	final String classFilesFolderPath = "../Java Parser/bin/";
 
 		// Model from source code
 

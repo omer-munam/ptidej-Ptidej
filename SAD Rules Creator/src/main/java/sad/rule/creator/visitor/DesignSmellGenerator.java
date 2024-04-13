@@ -32,7 +32,6 @@ import sad.rule.creator.model.ISemantic;
 import sad.rule.creator.model.IStruct;
 import sad.rule.creator.model.IVisitor;
 import sad.rule.creator.utils.Constants;
-import util.io.Files;
 import util.io.ProxyConsole;
 import util.io.ProxyDisk;
 
@@ -41,7 +40,7 @@ public class DesignSmellGenerator implements IVisitor {
 	private static final String RULE_FILE_TAG = "<RULE_FILE>";
 
 	private final String codeSmellOutputDir =
-			"../SAD/src/sad/designsmell/detection/repository/";
+		"../SAD/src/sad/designsmell/detection/repository/";
 	private IRule currentRule;
 	private IRuleCard currentRuleCard;
 	// We need to get the id of the first rule to return the result on this set
@@ -50,11 +49,11 @@ public class DesignSmellGenerator implements IVisitor {
 	// We count the number of rules
 	private int nbRules;
 	private final String outputFileName =
-			"../SAD/src/sad/designsmell/detection/repository/";
+		"../SAD/src/sad/designsmell/detection/repository/";
 	private final String ruleFileName;
 	private final boolean shouldGenerateCode;
 	private final String templatePath =
-			"../SAD Rules Creator/rsc/templates/DesignSmellTemplate.txt";
+		"../SAD Rules Creator/rsc/templates/DesignSmellTemplate.txt";
 
 	public DesignSmellGenerator(
 		final String aFileName,
