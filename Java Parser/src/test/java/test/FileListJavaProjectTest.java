@@ -22,7 +22,7 @@ public class FileListJavaProjectTest extends TestCase {
         final SourceInputsHolder javaProject = new FileListJavaProject(
                 null,
                 null,
-                "target/test-classes/NestingClasses/FileList.txt");
+                "src/test/resources/NestingClasses/FileList.txt");
 
         final NamedCompilationUnit[] namedCompilationUnits =
                 new JavaParser(javaProject).parse();
@@ -34,7 +34,7 @@ public class FileListJavaProjectTest extends TestCase {
         final SourceInputsHolder javaProject = new FileListJavaProject(
                 null,
                 null,
-                "target/test-classes/NestingClasses/FileListNotJavaFile.txt");
+                "src/test/resources/NestingClasses/FileListNotJavaFile.txt");
 
         try {
             new JavaParser(javaProject).parse();
