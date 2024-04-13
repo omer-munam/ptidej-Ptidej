@@ -300,9 +300,8 @@ public class PlantUMLVisitor implements IWalker{
 
 	@Override
 	public void visit(IParameter aParameter) {
-		visitResult.append(aParameter.getType());
-		visitResult.append(" ");
-		visitResult.append(aParameter.getName());
+		visitResult.append(aParameter.getTypeName());
+		visitResult.append(", ");
 	}
 
 	@Override
