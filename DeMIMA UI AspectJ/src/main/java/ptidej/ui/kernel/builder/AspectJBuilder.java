@@ -12,7 +12,6 @@ package ptidej.ui.kernel.builder;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import padl.aspectj.kernel.IAdvice;
 import padl.aspectj.kernel.IAspect;
 import padl.aspectj.kernel.IInterTypeConstructor;
@@ -38,32 +37,30 @@ import ptidej.ui.primitive.IPrimitiveFactory;
  * @since 2005/08/15
  */
 public final class AspectJBuilder extends Builder {
-	private static Map<IPrimitiveFactory, AspectJBuilder> UniqueInstances;
-
+	private static Map UniqueInstances;
 	public static Builder getCurrentBuilder(
-			final IPrimitiveFactory aPrimitiveFactory) {
-
+		final IPrimitiveFactory aPrimitiveFactory) {
 		if (AspectJBuilder.UniqueInstances == null) {
-			AspectJBuilder.UniqueInstances = new HashMap<>();
+			AspectJBuilder.UniqueInstances = new HashMap();
 		}
 		if (AspectJBuilder.UniqueInstances.get(aPrimitiveFactory) == null) {
-			AspectJBuilder.UniqueInstances.put(aPrimitiveFactory,
-					new AspectJBuilder(aPrimitiveFactory));
+			AspectJBuilder.UniqueInstances.put(
+				aPrimitiveFactory,
+				new AspectJBuilder(aPrimitiveFactory));
 		}
 		return (AspectJBuilder) AspectJBuilder.UniqueInstances
-				.get(aPrimitiveFactory);
+			.get(aPrimitiveFactory);
 	}
 
-	private AspectJBuilder(final IPrimitiveFactory aPrimitiveFactory) {
+	private AspectJBuilder(IPrimitiveFactory aPrimitiveFactory) {
 		super(aPrimitiveFactory);
 	}
-
 	protected Entity createEntity(final IConstituentOfModel anEntity) {
 		final Entity aGraphicalEntity;
 
 		if (anEntity instanceof IAspect) {
-			aGraphicalEntity = new Aspect(this.getPrimitiveFactory(), this,
-					(IAspect) anEntity);
+			aGraphicalEntity =
+				new Aspect(this.getPrimitiveFactory(), this, (IAspect) anEntity);
 		}
 		else {
 			aGraphicalEntity = null;
@@ -71,35 +68,41 @@ public final class AspectJBuilder extends Builder {
 
 		return aGraphicalEntity;
 	}
-
-	protected Element createElement(final IConstituentOfModel anEntity,
-			final IConstituentOfEntity anElement) {
+	protected Element createElement(
+		final IConstituentOfModel anEntity,
+		final IConstituentOfEntity anElement) {
 
 		final Element aGraphicalElement;
 
 		if (anElement instanceof IAdvice) {
-			aGraphicalElement = new Advice(this.getPrimitiveFactory(),
-					(IAdvice) anElement);
+			aGraphicalElement =
+				new Advice(this.getPrimitiveFactory(), (IAdvice) anElement);
 		}
 		else if (anElement instanceof IPointcut) {
-			aGraphicalElement = new Pointcut(this.getPrimitiveFactory(),
-					(IPointcut) anElement);
+			aGraphicalElement =
+				new Pointcut(this.getPrimitiveFactory(), (IPointcut) anElement);
 		}
 		else if (anElement instanceof IInterTypeMethod) {
-			aGraphicalElement = new InterTypeMethod(this.getPrimitiveFactory(),
+			aGraphicalElement =
+				new InterTypeMethod(
+					this.getPrimitiveFactory(),
 					(IInterTypeMethod) anElement);
 		}
 		else if (anElement instanceof IInterTypeDeclareParents) {
-			aGraphicalElement = new InterTypeDeclareParents(
+			aGraphicalElement =
+				new InterTypeDeclareParents(
 					this.getPrimitiveFactory(),
 					(IInterTypeDeclareParents) anElement);
 		}
 		else if (anElement instanceof IInterTypeField) {
-			aGraphicalElement = new InterTypeField(this.getPrimitiveFactory(),
+			aGraphicalElement =
+				new InterTypeField(
+					this.getPrimitiveFactory(),
 					(IInterTypeField) anElement);
 		}
 		else if (anElement instanceof IInterTypeConstructor) {
-			aGraphicalElement = new InterTypeConstructor(
+			aGraphicalElement =
+				new InterTypeConstructor(
 					this.getPrimitiveFactory(),
 					(IInterTypeConstructor) anElement);
 		}

@@ -36,27 +36,6 @@
 
 		<dependency>
 			<groupId>net.ptidej.padl</groupId>
-			<artifactId>padl-statements</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>net.ptidej.padl</groupId>
-			<artifactId>padl-statements-creator-aol</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>net.ptidej.padl</groupId>
-			<artifactId>padl-statements-creator-classfile</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>net.ptidej.padl</groupId>
 			<artifactId>padl-creator-aol</artifactId>
 			<version>1.0.0</version>
 			<scope>test</scope>
@@ -65,6 +44,21 @@
 		<dependency>
 			<groupId>net.ptidej.padl</groupId>
 			<artifactId>padl-creator-aol</artifactId>
+			<version>1.0.0</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-aspectj</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.ptidej.padl</groupId>
+			<artifactId>padl-creator-aspectj</artifactId>
 			<version>1.0.0</version>
 			<type>test-jar</type>
 			<scope>test</scope>
@@ -148,27 +142,6 @@
 		<dependency>
 			<groupId>net.ptidej.padl</groupId>
 			<artifactId>padl-creator-csharp-v2</artifactId>
-			<version>1.0.0</version>
-			<type>test-jar</type>
-			<scope>test</scope>
-		</dependency>
-
-		<!--
-		These two last dependencies MUST COME LAST because 
-		they bring with them aspectjtools, which itself bring
-		with it an old version of SubMonitor, which leads to
-			java.lang.NoSuchMethodError: 'org.eclipse.core.runtime.SubMonitor org.eclipse.core.runtime.SubMonitor.split(int)' 
-		-->
-		<dependency>
-			<groupId>net.ptidej.padl</groupId>
-			<artifactId>padl-creator-aspectj</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>net.ptidej.padl</groupId>
-			<artifactId>padl-creator-aspectj</artifactId>
 			<version>1.0.0</version>
 			<type>test-jar</type>
 			<scope>test</scope>

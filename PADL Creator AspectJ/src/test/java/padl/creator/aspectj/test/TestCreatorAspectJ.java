@@ -16,15 +16,12 @@ import junit.framework.TestSuite;
 public class TestCreatorAspectJ extends TestSuite {
 	public TestCreatorAspectJ() {
 	}
-
-	public TestCreatorAspectJ(final Class<?> theClass) {
+	public TestCreatorAspectJ(final Class theClass) {
 		super(theClass);
 	}
-
 	public TestCreatorAspectJ(final String name) {
 		super(name);
 	}
-
 	public static Test suite() {
 		final TestCreatorAspectJ suite = new TestCreatorAspectJ();
 		suite.addTestSuite(TestOO.class);

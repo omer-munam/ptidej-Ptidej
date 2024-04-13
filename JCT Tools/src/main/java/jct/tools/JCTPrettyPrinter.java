@@ -35,7 +35,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-
 import jct.kernel.IJCTAnd;
 import jct.kernel.IJCTAndAssignment;
 import jct.kernel.IJCTArrayAccess;
@@ -147,12 +146,12 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 
 	public JCTPrettyPrinter(final File directory) {
 		if (directory.exists() && !directory.isDirectory())
-			throw new IllegalArgumentException(
-					"directory (" + directory + ") must be a directory.");
+			throw new IllegalArgumentException("directory (" + directory
+					+ ") must be a directory.");
 
 		if (!directory.exists() && !directory.mkdirs())
-			throw new IllegalStateException(
-					"Cannot create the directory " + directory);
+			throw new IllegalStateException("Cannot create the directory "
+					+ directory);
 
 		this.directory = directory;
 	}
@@ -168,8 +167,10 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		if (t.isUnnamed())
 			this.currentDirectory = this.directory;
 		else {
-			this.currentDirectory = new File(this.directory,
-					t.getName().replace('.', File.separatorChar));
+			this.currentDirectory =
+				new File(this.directory, t.getName().replace(
+					'.',
+					File.separatorChar));
 
 			if (this.currentDirectory.exists()
 					&& !this.currentDirectory.isDirectory())
@@ -178,23 +179,22 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 
 			if (!this.currentDirectory.exists()
 					&& !this.currentDirectory.mkdirs())
-				throw new IllegalStateException(
-						"Cannot create the directory " + this.currentDirectory);
+				throw new IllegalStateException("Cannot create the directory "
+						+ this.currentDirectory);
 		}
 
 		for (final IJCTCompilationUnit cu : ((IJCTContainer<? extends IJCTCompilationUnit>) t)
-				.getEnclosedElements())
+			.getEnclosedElements())
 			if (null != cu)
 				cu.accept(this, p);
 
 		return null;
 	}
 
-	public Void visitCompilationUnit(final IJCTCompilationUnit t,
-			final Void p) {
+	public Void visitCompilationUnit(final IJCTCompilationUnit t, final Void p) {
 		try {
-			final File file = new File(this.currentDirectory,
-					t.getSourceFile().getName());
+			final File file =
+				new File(this.currentDirectory, t.getSourceFile().getName());
 			file.delete();
 			this.currentFile = new FileWriter(file);
 
@@ -244,8 +244,9 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitBitwiseComplement(final IJCTBitwiseComplement t,
-			final Void p) {
+	public Void visitBitwiseComplement(
+		final IJCTBitwiseComplement t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -269,8 +270,7 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitCharacterLiteral(final IJCTCharacterLiteral t,
-			final Void p) {
+	public Void visitCharacterLiteral(final IJCTCharacterLiteral t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -286,8 +286,9 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitConditionalOperator(final IJCTConditionalOperator t,
-			final Void p) {
+	public Void visitConditionalOperator(
+		final IJCTConditionalOperator t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -303,8 +304,7 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitDivideAssignment(final IJCTDivideAssignment t,
-			final Void p) {
+	public Void visitDivideAssignment(final IJCTDivideAssignment t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -328,18 +328,21 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitErroneousExpression(final IJCTErroneousExpression t,
-			final Void p) {
+	public Void visitErroneousExpression(
+		final IJCTErroneousExpression t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitErroneousSelector(final IJCTErroneousSelector t,
-			final Void p) {
+	public Void visitErroneousSelector(
+		final IJCTErroneousSelector t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitExpressionStatement(final IJCTExpressionStatement t,
-			final Void p) {
+	public Void visitExpressionStatement(
+		final IJCTExpressionStatement t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -355,8 +358,9 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitGreaterThanOrEqual(final IJCTGreaterThanOrEqual t,
-			final Void p) {
+	public Void visitGreaterThanOrEqual(
+		final IJCTGreaterThanOrEqual t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -376,8 +380,7 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitIntersectionType(final IJCTIntersectionType t,
-			final Void p) {
+	public Void visitIntersectionType(final IJCTIntersectionType t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -389,8 +392,9 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitLeftShiftAssignment(final IJCTLeftShiftAssignment t,
-			final Void p) {
+	public Void visitLeftShiftAssignment(
+		final IJCTLeftShiftAssignment t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -398,13 +402,13 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitLessThanOrEqual(final IJCTLessThanOrEqual t,
-			final Void p) {
+	public Void visitLessThanOrEqual(final IJCTLessThanOrEqual t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitLogicalComplement(final IJCTLogicalComplement t,
-			final Void p) {
+	public Void visitLogicalComplement(
+		final IJCTLogicalComplement t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -413,7 +417,8 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 	}
 
 	public <Element extends IJCTClassMember> Void visitMemberSelector(
-			final IJCTMemberSelector<Element> t, final Void p) {
+		final IJCTMemberSelector<Element> t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -421,8 +426,7 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitMethodInvocation(final IJCTMethodInvocation t,
-			final Void p) {
+	public Void visitMethodInvocation(final IJCTMethodInvocation t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -430,8 +434,7 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitMinusAssignment(final IJCTMinusAssignment t,
-			final Void p) {
+	public Void visitMinusAssignment(final IJCTMinusAssignment t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -439,8 +442,9 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitMultiplyAssignment(final IJCTMultiplyAssignment t,
-			final Void p) {
+	public Void visitMultiplyAssignment(
+		final IJCTMultiplyAssignment t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -484,23 +488,19 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitPostfixDecrement(final IJCTPostfixDecrement t,
-			final Void p) {
+	public Void visitPostfixDecrement(final IJCTPostfixDecrement t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitPostfixIncrement(final IJCTPostfixIncrement t,
-			final Void p) {
+	public Void visitPostfixIncrement(final IJCTPostfixIncrement t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitPrefixDecrement(final IJCTPrefixDecrement t,
-			final Void p) {
+	public Void visitPrefixDecrement(final IJCTPrefixDecrement t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitPrefixIncrement(final IJCTPrefixIncrement t,
-			final Void p) {
+	public Void visitPrefixIncrement(final IJCTPrefixIncrement t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -512,8 +512,9 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitRemainderAssignment(final IJCTRemainderAssignment t,
-			final Void p) {
+	public Void visitRemainderAssignment(
+		final IJCTRemainderAssignment t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -525,18 +526,21 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitRightShiftAssignment(final IJCTRightShiftAssignment t,
-			final Void p) {
+	public Void visitRightShiftAssignment(
+		final IJCTRightShiftAssignment t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
 	public <Element extends IJCTIdentifiable> Void visitSimpleIdentifier(
-			final IJCTSimpleSelector<Element> t, final Void p) {
+		final IJCTSimpleSelector<Element> t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
 	public <Element extends IJCTIdentifiable> Void visitSimpleSelector(
-			final IJCTSimpleSelector<Element> t, final Void p) {
+		final IJCTSimpleSelector<Element> t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -572,13 +576,15 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
-	public Void visitUnsignedRightShift(final IJCTUnsignedRightShift t,
-			final Void p) {
+	public Void visitUnsignedRightShift(
+		final IJCTUnsignedRightShift t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
 	public Void visitUnsignedRightShiftAssignment(
-			final IJCTUnsignedRightShiftAssignment t, final Void p) {
+		final IJCTUnsignedRightShiftAssignment t,
+		final Void p) {
 		return this.visitElement(t, p);
 	}
 
@@ -598,14 +604,17 @@ public class JCTPrettyPrinter implements IJCTVisitor<Void, Void> {
 		return this.visitElement(t, p);
 	}
 
+	@Override
 	public Void visitField(final IJCTField t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
+	@Override
 	public Void visitParameter(final IJCTParameter t, final Void p) {
 		return this.visitElement(t, p);
 	}
 
+	@Override
 	public Void visitComment(final IJCTComment t, final Void p) {
 		return this.visitElement(t, p);
 	}

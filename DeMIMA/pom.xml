@@ -34,7 +34,6 @@
 	</build>
 
 	<dependencies>
-
 		<!-- Main dependecy -->
 		<dependency>
 			<groupId>net.ptidej.cpl</groupId>
