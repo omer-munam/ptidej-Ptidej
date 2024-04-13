@@ -16,13 +16,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import org.apache.commons.io.FileUtils;
 
 public class ProxyDisk {
-	private static final String TEMP_DIRECTORY = "Temp/";
+	private static final String TEMP_DIRECTORY = "../Temp/";
 	private static ProxyDisk UniqueInstance;
-
 	public static ProxyDisk getInstance() {
 		if (ProxyDisk.UniqueInstance == null) {
 			ProxyDisk.UniqueInstance = new ProxyDisk();
@@ -32,17 +30,15 @@ public class ProxyDisk {
 	}
 
 	private File tempDirectory;
-
 	private ProxyDisk() {
 		try {
-			this.tempDirectory = this
-					.createDirectories(ProxyDisk.TEMP_DIRECTORY);
+			this.tempDirectory =
+				this.createDirectories(ProxyDisk.TEMP_DIRECTORY);
 		}
 		catch (final IOException e) {
 			e.printStackTrace(ProxyConsole.getInstance().errorOutput());
 		}
 	}
-
 	private File createDirectories(final String aPathToADirectory)
 			throws IOException {
 
@@ -52,53 +48,68 @@ public class ProxyDisk {
 				FileUtils.forceMkdir(defaultDirectory);
 			}
 			catch (final IOException e) {
-				ProxyConsole.getInstance().errorOutput().print(
+				ProxyConsole
+					.getInstance()
+					.errorOutput()
+					.print(
 						"FileOutputProxy cannot create the necessary directory: "
 								+ aPathToADirectory + " (canonical path: "
 								+ defaultDirectory.getCanonicalPath() + ")");
-				ProxyConsole.getInstance().errorOutput()
-						.print(aPathToADirectory);
-				ProxyConsole.getInstance().errorOutput()
-						.print("(canonical path: ");
-				ProxyConsole.getInstance().errorOutput()
-						.print(defaultDirectory.getCanonicalPath());
-				ProxyConsole.getInstance().errorOutput().println(
+				ProxyConsole
+					.getInstance()
+					.errorOutput()
+					.print(aPathToADirectory);
+				ProxyConsole
+					.getInstance()
+					.errorOutput()
+					.print("(canonical path: ");
+				ProxyConsole
+					.getInstance()
+					.errorOutput()
+					.print(defaultDirectory.getCanonicalPath());
+				ProxyConsole
+					.getInstance()
+					.errorOutput()
+					.println(
 						")\nFalling back on to default temporary directory!");
 				return new File(System.getProperty("java.io.tmpdir"));
 			}
 		}
 		else if (defaultDirectory.isFile()) {
 			throw new IOException(
-					"FileOutputProxy cannot use a file as a directory: "
-							+ aPathToADirectory + "(canonical path: "
-							+ defaultDirectory.getCanonicalPath() + ")");
+				"FileOutputProxy cannot use a file as a directory: "
+						+ aPathToADirectory + "(canonical path: "
+						+ defaultDirectory.getCanonicalPath() + ")");
 		}
 		return defaultDirectory;
 	}
-
-	private File createFile(final String aFileName, final boolean readMode,
-			final boolean shouldAppend) {
+	private File createFile(
+		final String aFileName,
+		final boolean readMode,
+		final boolean shouldAppend) {
 
 		File file;
 		int indexOfLastPathSeparator;
 
 		// Yann 2013/05/29: Separators...
 		// I make sure to consider any kind of path separators...
-		if ((indexOfLastPathSeparator = Math.max(aFileName.lastIndexOf('/'),
-				aFileName.lastIndexOf('\\'))) > -1) {
+		if ((indexOfLastPathSeparator =
+			Math.max(aFileName.lastIndexOf('/'), aFileName.lastIndexOf('\\'))) > -1) {
 
 			indexOfLastPathSeparator++;
-			final String somePaths = aFileName.substring(0,
-					indexOfLastPathSeparator);
-			final String fileName = aFileName
-					.substring(indexOfLastPathSeparator);
+			final String somePaths =
+				aFileName.substring(0, indexOfLastPathSeparator);
+			final String fileName =
+				aFileName.substring(indexOfLastPathSeparator);
 			try {
 				file = new File(this.createDirectories(somePaths), fileName);
 			}
 			catch (final IOException e) {
 				e.printStackTrace(ProxyConsole.getInstance().errorOutput());
-				ProxyConsole.getInstance().errorOutput().println(
-						"FileOutputProxy will use its default directory");
+				ProxyConsole
+					.getInstance()
+					.errorOutput()
+					.println("FileOutputProxy will use its default directory");
 				file = new File(ProxyDisk.TEMP_DIRECTORY, fileName);
 			}
 		}
@@ -106,24 +117,30 @@ public class ProxyDisk {
 			file = new File(aFileName);
 		}
 		if (!readMode && !shouldAppend && file.exists()) {
-			ProxyConsole.getInstance().warningOutput()
-					.print(this.getClass().getName());
-			ProxyConsole.getInstance().warningOutput()
-					.print(" reports that \"");
+			ProxyConsole
+				.getInstance()
+				.warningOutput()
+				.print(this.getClass().getName());
+			ProxyConsole
+				.getInstance()
+				.warningOutput()
+				.print(" reports that \"");
 			ProxyConsole.getInstance().warningOutput().print(aFileName);
-			ProxyConsole.getInstance().warningOutput()
-					.print(" already exists (\"");
-			ProxyConsole.getInstance().warningOutput()
-					.print(file.getAbsolutePath());
+			ProxyConsole
+				.getInstance()
+				.warningOutput()
+				.print(" already exists (\"");
+			ProxyConsole
+				.getInstance()
+				.warningOutput()
+				.print(file.getAbsolutePath());
 			ProxyConsole.getInstance().warningOutput().println("\")");
 		}
 		return file;
 	}
-
 	public File directoryTempFile() {
 		return this.tempDirectory;
 	}
-
 	public File directoryTempOutput(final String someSubpaths) {
 		String newPath = ProxyDisk.TEMP_DIRECTORY + someSubpaths;
 		// Yann 2013/05/29: Separators...
@@ -132,7 +149,10 @@ public class ProxyDisk {
 			newPath += '/';
 		}
 		if (someSubpaths.indexOf("..") > -1) {
-			ProxyConsole.getInstance().warningOutput().println(
+			ProxyConsole
+				.getInstance()
+				.warningOutput()
+				.println(
 					"ProxyDisk advises not to \"escape\" from its default directory: "
 							+ someSubpaths);
 		}
@@ -142,12 +162,13 @@ public class ProxyDisk {
 		}
 		catch (final IOException e) {
 			e.printStackTrace(ProxyConsole.getInstance().errorOutput());
-			ProxyConsole.getInstance().errorOutput()
-					.println("FileOutputProxy will use its default directory");
+			ProxyConsole
+				.getInstance()
+				.errorOutput()
+				.println("FileOutputProxy will use its default directory");
 			return this.tempDirectory;
 		}
 	}
-
 	public String directoryTempString() {
 		// Yann 2013/05/31: Silly file separator!
 		// It use to be:
@@ -156,25 +177,21 @@ public class ProxyDisk {
 		// a trailing file separator, so silly...
 		return ProxyDisk.TEMP_DIRECTORY;
 	}
-
 	public FileReader fileAbsoluteInput(final File aFile) {
 		return this.fileAbsoluteInput(aFile.getAbsolutePath());
 	}
-
 	public FileReader fileAbsoluteInput(final String aFileName) {
 		return this.fileInput(aFileName);
 	}
-
 	public FileWriter fileAbsoluteOutput(final String aFileName) {
 		return this.fileAbsoluteOutput(aFileName, false);
 	}
-
-	public FileWriter fileAbsoluteOutput(final String aFileName,
-			final boolean shouldAppend) {
+	public FileWriter fileAbsoluteOutput(
+		final String aFileName,
+		final boolean shouldAppend) {
 
 		return this.fileOutput(aFileName, shouldAppend);
 	}
-
 	private FileReader fileInput(final String aFileName) {
 		try {
 			final File file = this.createFile(aFileName, true, false);
@@ -187,9 +204,9 @@ public class ProxyDisk {
 			return null;
 		}
 	}
-
-	private FileWriter fileOutput(final String aFileName,
-			final boolean shouldAppend) {
+	private FileWriter fileOutput(
+		final String aFileName,
+		final boolean shouldAppend) {
 
 		try {
 			final File file = this.createFile(aFileName, false, shouldAppend);
@@ -202,7 +219,6 @@ public class ProxyDisk {
 			return null;
 		}
 	}
-
 	/**
 	 * @param aFileName the file that will be used in the temporary directory.
 	 * @return Full canonical path to the temporary file named "aFileName" 
@@ -210,42 +226,35 @@ public class ProxyDisk {
 	public File fileTempFile() {
 		return new File(this.fileTempString());
 	}
-
 	public FileReader fileTempInput(final File aFile) {
 		return this.fileTempInput(aFile.getName());
 	}
-
 	public FileReader fileTempInput(final String aFileName) {
 		return this.fileInput(ProxyDisk.TEMP_DIRECTORY + aFileName);
 	}
-
 	public String fileTempInputString(final String aFileName) {
 		final File file = this.createFile(aFileName, false, false);
 		return file.getAbsolutePath();
 	}
-
-	public FileWriter fileTempOutput(final File file,
-			final boolean shouldAppend) {
+	public FileWriter fileTempOutput(final File file, final boolean shouldAppend) {
 		return this.fileTempOutput(file.getName(), shouldAppend);
 	}
-
 	public FileWriter fileTempOutput(final String aFileName) {
 		return this.fileTempOutput(aFileName, false);
 	}
+	public FileWriter fileTempOutput(
+		final String aFileName,
+		final boolean shouldAppend) {
 
-	public FileWriter fileTempOutput(final String aFileName,
-			final boolean shouldAppend) {
-
-		return this.fileOutput(ProxyDisk.TEMP_DIRECTORY + aFileName,
-				shouldAppend);
+		return this.fileOutput(
+			ProxyDisk.TEMP_DIRECTORY + aFileName,
+			shouldAppend);
 	}
-
 	public String fileTempOutputString(final String aFileName) {
-		final File file = this.createFile(ProxyDisk.TEMP_DIRECTORY + aFileName,
-				false, false);
+		final File file =
+			this.createFile(ProxyDisk.TEMP_DIRECTORY + aFileName, false, false);
 		return file.getAbsolutePath();
 	}
-
 	/**
 	 * @return A unique file name that will be created in the temporary directory. 
 	 */
@@ -257,8 +266,8 @@ public class ProxyDisk {
 			buffer.append("File.");
 
 			final Calendar calendar = Calendar.getInstance();
-			final SimpleDateFormat sdf = new SimpleDateFormat(
-					"yyyyMMdd'H'HHmmss");
+			final SimpleDateFormat sdf =
+				new SimpleDateFormat("yyyyMMdd'H'HHmmss");
 			buffer.append(sdf.format(calendar.getTime()));
 			buffer.append(".temp");
 
