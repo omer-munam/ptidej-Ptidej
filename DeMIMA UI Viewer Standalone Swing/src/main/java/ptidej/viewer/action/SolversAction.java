@@ -24,6 +24,7 @@ import ptidej.viewer.ViewerCommons;
 import ptidej.viewer.ui.AbstractRepresentationWindow;
 import ptidej.viewer.ui.DesktopFrame;
 import ptidej.viewer.ui.DesktopPane;
+import ptidej.viewer.ui.window.GeneratePlantUMLWindow;
 import ptidej.viewer.ui.window.ListEntitiesWindow;
 import ptidej.viewer.ui.window.ListOccurrencesWindow;
 import ptidej.viewer.ui.window.ModelStatisticsWindow;
@@ -69,6 +70,10 @@ public class SolversAction extends AbstractAction {
 			final ListEntitiesWindow window =
 				(ListEntitiesWindow) SingletonBag
 					.getInstance(ListEntitiesWindow.class);
+			window.setVisible(true);
+		}
+		else if (action.equals(Resources.GENERATE_PLANTUML)) {
+			final GeneratePlantUMLWindow window = new GeneratePlantUMLWindow();
 			window.setVisible(true);
 		}
 		else if (action.equals(Resources.LOAD_SIMILAR_MICRO_ARCHITECTURES)) {
