@@ -67,6 +67,14 @@ public class ToolPanel extends JPanel {
 			true,
 			false,
 			false);
+		content.addButton(
+				Resources.GENERATE_PLANTUML,
+				ToolPanel.class,
+				Resources.PTIDEJ_SOLVERS,
+				true,
+				false,
+				false
+		);
 		panel.addCollapsablePanel("Models", content);
 
 		content = new EmbeddedPanel();

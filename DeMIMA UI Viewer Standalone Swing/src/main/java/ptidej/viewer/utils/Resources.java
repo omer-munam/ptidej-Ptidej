@@ -120,6 +120,7 @@ public final class Resources {
 	public static final String LAYOUT_TOPICS = "LAYOUT_TOPICS";
 	public static final String LINK = "_LINK";
 	public static final String LIST_ENTITIES = "LIST_ENTITIES";
+	public static final String GENERATE_PLANTUML = "GENERATE_PLANTUML";
 	public static final String LIST_SIMILAR_MICRO_ARCHITECTURES =
 		"LIST_SIMILAR_MICRO_ARCHITECTURES";
 	public static final String LOAD_DUAL_HIERARCHICAL_PROJECT =

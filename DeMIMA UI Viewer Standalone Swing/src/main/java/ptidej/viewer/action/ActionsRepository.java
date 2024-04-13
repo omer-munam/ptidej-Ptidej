@@ -198,6 +198,9 @@ public class ActionsRepository {
 				Resources.LIST_ENTITIES,
 				SolversAction.getInstance());
 			actionsGroup.put(
+				Resources.GENERATE_PLANTUML,
+				SolversAction.getInstance());
+			actionsGroup.put(
 				Resources.LOAD_SIMILAR_MICRO_ARCHITECTURES,
 				SolversAction.getInstance());
 			actionsGroup.put(

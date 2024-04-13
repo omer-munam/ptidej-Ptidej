@@ -1885,6 +1885,8 @@ public class PtidejResourceBundle extends ListResourceBundle {
 						"Show Model Statistics" },
 				{ "ptidej.viewer.ui.panel.ToolPanel::CMD_LIST_ENTITIES",
 						"List Model Entities" },
+				{ "ptidej.viewer.ui.panel.ToolPanel::CMD_GENERATE_PLANTUML",
+						"Generate PlantUML" },
 				{
 						"ptidej.viewer.ui.panel.ToolPanel::CMD_LOAD_SIMILAR_MICRO_ARCHITECTURES",
 						"Load Similar Micro-Architectures" },
