@@ -1,18 +1,19 @@
 /*******************************************************************************
- * Copyright (c) 2001-2014 Yann-Gaël Guéhéneuc and others.
+ * Copyright (c) 2001-2014 Yann-Gaï¿½l Guï¿½hï¿½neuc and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Public License v2.0
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
  * Contributors:
- *     Yann-Gaël Guéhéneuc and others, see in file; API and its implementation
+ *     Yann-Gaï¿½l Guï¿½hï¿½neuc and others, see in file; API and its implementation
  ******************************************************************************/
 package ptidej.viewer.ui.window;
 
 import choco.Entity;
 import padl.kernel.IConstituent;
 import padl.kernel.IEntity;
+import padl.kernel.IAbstractModel;
 import ptidej.ui.event.GraphEvent;
 import ptidej.viewer.awt.entities.ListPanel;
 import ptidej.viewer.event.SourceAndGraphModelEvent;
@@ -26,7 +27,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * @author Yann-Gaël Guéhéneuc
+ * @author Yann-Gaï¿½l Guï¿½hï¿½neuc
  * @since  2007/06/29
  */
 public final class GeneratePlantUMLWindow extends AbstractExternalWindow {
@@ -51,12 +52,7 @@ public final class GeneratePlantUMLWindow extends AbstractExternalWindow {
         try {
             FileWriter myWriter = new FileWriter("D:\\filename.txt");
             PlantUMLVisitor walker = new PlantUMLVisitor();
-            ptidej.ui.kernel.Entity[] entities = aSourceModelEvent.getRepresentation().getSourceGraph().listEntities();
-            for (int i = 0; i < entities.length; i++){
-                entities[i].getSourceEntity().accept(walker);
-
-//                myWriter.write(entities[i].getName() + "\n");
-            }
+            aSourceModelEvent.getRepresentation().getSourceModel().walk(walker);
             myWriter.write(walker.getResult().toString());
             myWriter.close();
             this.dispose();
